@@ -1,0 +1,117 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./app/page.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.page_container__jZF7q {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+}
+
+.page_card__Cf__u {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.page_title__po7na {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.page_nav__ijo23 {
+  margin: 2rem 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page_navButton__G_SkT {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.page_navButton__G_SkT:hover {
+  background: #5a6fd8;
+  transform: translateY(-2px);
+}
+
+.page_navButton__G_SkT.page_active__9fwfh {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+.page_content___38fW {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_pageContent__mKTBa {
+  animation: page_fadeIn__jjObi 0.5s ease-in;
+}
+
+.page_pageContent__mKTBa h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.page_pageContent__mKTBa p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+@keyframes page_fadeIn__jjObi {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page_title__po7na {
+    font-size: 2rem;
+  }
+  
+  .page_card__Cf__u {
+    padding: 1.5rem;
+  }
+  
+  .page_navButton__G_SkT {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .page_pageContent__mKTBa h2 {
+    font-size: 1.5rem;
+  }
+}
+

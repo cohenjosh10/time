@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import styles from './page.module.css'
 
-type PageType = 'home' | 'about' | 'contact'
+type PageType = 'home' | 'about' | 'contact' | 'josh'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<PageType>('home')
@@ -34,6 +34,14 @@ export default function Home() {
             <p>In a real application, you might have a contact form with server actions here!</p>
           </div>
         )
+      case 'josh':
+        return (
+          <div className={styles.pageContent}>
+            <h2>About Josh</h2>
+            <p>Josh is an investor at Innovation Endeavors.</p>
+            <p>Innovation Endeavors is a venture capital firm that invests in transformative technology companies.</p>
+          </div>
+        )
       default:
         return null
     }
@@ -62,6 +70,12 @@ export default function Home() {
             className={`${styles.navButton} ${currentPage === 'contact' ? styles.active : ''}`}
           >
             Contact
+          </button>
+          <button
+            onClick={() => setCurrentPage('josh')}
+            className={`${styles.navButton} ${currentPage === 'josh' ? styles.active : ''}`}
+          >
+            Josh
           </button>
         </nav>
         

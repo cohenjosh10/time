@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Hello World SPA',
-  description: 'A simple Next.js Single Page Application',
+  title: 'Moonphase Tracker',
+  description: 'Track days since the last full moon',
 }
 
 export default function RootLayout({

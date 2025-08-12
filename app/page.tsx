@@ -1,12 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Moon } from 'lunarphase-js'
 import styles from './page.module.css'
 
-type PageType = 'home' | 'about' | 'contact' | 'josh'
+type PageType = 'home' | 'about' | 'contact' | 'moon'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<PageType>('home')
+  const [daysSinceNewMoon, setDaysSinceNewMoon] = useState<number>(0)
+
+  useEffect(() => {
+    // Get days since last new moon using lunarphase-js
+    const lunarAge = Moon.lunarAge() // Days since last new moon
+    setDaysSinceNewMoon(Math.floor(lunarAge))
+  }, [])
 
   const renderContent = () => {
     switch (currentPage) {
@@ -34,12 +42,12 @@ export default function Home() {
             <p>In a real application, you might have a contact form with server actions here!</p>
           </div>
         )
-      case 'josh':
+      case 'moon':
         return (
           <div className={styles.pageContent}>
-            <h2>About Josh</h2>
-            <p>Josh is an investor at Innovation Endeavors.</p>
-            <p>Innovation Endeavors is a venture capital firm that invests in transformative technology companies.</p>
+            <h2>Moon Phase Tracker</h2>
+            <p>Days since last new moon: <strong>{daysSinceNewMoon}</strong></p>
+            <p>The lunar cycle is approximately 29.5 days long, starting fresh with each new moon.</p>
           </div>
         )
       default:
@@ -72,10 +80,10 @@ export default function Home() {
             Contact
           </button>
           <button
-            onClick={() => setCurrentPage('josh')}
-            className={`${styles.navButton} ${currentPage === 'josh' ? styles.active : ''}`}
+            onClick={() => setCurrentPage('moon')}
+            className={`${styles.navButton} ${currentPage === 'moon' ? styles.active : ''}`}
           >
-            Josh
+            Moon
           </button>
         </nav>
         

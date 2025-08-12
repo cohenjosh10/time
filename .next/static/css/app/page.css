@@ -26,6 +26,7 @@
   font-size: 3.5rem;
   font-weight: 300;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .page_content___38fW {
@@ -56,23 +57,128 @@
   text-transform: uppercase;
 }
 
-/* Responsive design */
+.page_phaseInfo__uBCoF {
+  margin-top: 2rem;
+}
+
+.page_phaseLabel__0zA9m {
+  font-size: 1.1rem;
+  color: #34495e;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Mobile-first responsive design */
 @media (max-width: 768px) {
-  .page_title__po7na {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  .page_container__jZF7q {
+    padding: 0.5rem;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    /* Prevent zoom on double tap */
+    touch-action: manipulation;
   }
 
   .page_card__Cf__u {
-    padding: 2rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Prevent text selection on mobile */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  .page_title__po7na {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+  }
+
+  .page_content___38fW {
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page_moonDisplay__d673D {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .page_daysNumber__d0i4r {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .page_daysLabel__bjw7E {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    line-height: 1.4;
+  }
+
+  .page_phaseInfo__uBCoF {
+    margin-top: 2rem;
+  }
+
+  .page_phaseLabel__0zA9m {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .page_container__jZF7q {
+    padding: 0.25rem;
+  }
+
+  .page_card__Cf__u {
+    padding: 1rem;
+    border-radius: 12px;
+    min-height: 75vh;
+  }
+
+  .page_title__po7na {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
   }
 
   .page_daysNumber__d0i4r {
     font-size: 4rem;
+    margin-bottom: 0.8rem;
   }
 
   .page_daysLabel__bjw7E {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .page_card__Cf__u {
+    min-height: 85vh;
+    padding: 1rem 2rem;
+  }
+
+  .page_title__po7na {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .page_daysNumber__d0i4r {
+    font-size: 4.5rem;
+  }
+
+  .page_moonDisplay__d673D {
+    padding: 1rem 0;
   }
 }
 

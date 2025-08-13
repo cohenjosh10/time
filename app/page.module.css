@@ -36,6 +36,147 @@
   text-align: center;
 }
 
+.moonVisualization {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watchMoonContainer {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  border: 3px solid #1a252f;
+}
+
+.watchBezel {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #34495e, #2c3e50);
+  border: 1px solid #4a5f7a;
+}
+
+.watchTicks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.tick {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 2px;
+  height: 12px;
+  background: #7f8c8d;
+  transform-origin: 50% 110px;
+  margin-left: -1px;
+}
+
+.tick:nth-child(3n) {
+  height: 16px;
+  width: 3px;
+  background: #95a5a6;
+  margin-left: -1.5px;
+}
+
+.moonDisk {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  background: #1a1a2e;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.moonSurface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 50%, #d4d4d4 100%);
+  overflow: hidden;
+}
+
+.moonShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a2e;
+  border-radius: 50%;
+  transform-origin: center;
+  transition: all 0.5s ease;
+  clip-path: ellipse(50% 50% at 0% 50%);
+}
+
+.moonCraters {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.crater1, .crater2, .crater3 {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.crater1 {
+  width: 12px;
+  height: 12px;
+  top: 30%;
+  left: 35%;
+}
+
+.crater2 {
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: 60%;
+}
+
+.crater3 {
+  width: 6px;
+  height: 6px;
+  top: 65%;
+  left: 25%;
+}
+
+.watchGlass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
 .daysNumber {
   display: block;
   font-size: 6rem;
@@ -104,11 +245,36 @@
 
   .moonDisplay {
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
+  }
+
+  .moonVisualization {
+    margin-bottom: 2rem;
+  }
+
+  .watchMoonContainer {
+    width: 180px;
+    height: 180px;
+  }
+
+  .moonDisk {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .tick {
+    height: 8px;
+    transform-origin: 50% 82px;
+  }
+
+  .tick:nth-child(3n) {
+    height: 12px;
   }
 
   .daysNumber {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 800;
     margin-bottom: 1rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -147,8 +313,48 @@
     letter-spacing: 2px;
   }
 
+  .watchMoonContainer {
+    width: 140px;
+    height: 140px;
+  }
+
+  .moonVisualization {
+    margin-bottom: 1.5rem;
+  }
+
+  .moonDisk {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .tick {
+    height: 6px;
+    transform-origin: 50% 64px;
+  }
+
+  .tick:nth-child(3n) {
+    height: 10px;
+  }
+
+  .crater1 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .crater2 {
+    width: 6px;
+    height: 6px;
+  }
+
+  .crater3 {
+    width: 4px;
+    height: 4px;
+  }
+
   .daysNumber {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 0.8rem;
   }
 

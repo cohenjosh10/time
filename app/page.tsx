@@ -6,11 +6,15 @@ import styles from './page.module.css'
 
 export default function Home() {
   const [daysSinceNewMoon, setDaysSinceNewMoon] = useState<number>(0)
+  const [currentPhase, setCurrentPhase] = useState<string>('')
 
   useEffect(() => {
     // Get days since last new moon using lunarphase-js
     const lunarAge = Moon.lunarAge() // Days since last new moon
+    const phase = Moon.lunarPhase() // Get current phase name
+
     setDaysSinceNewMoon(Math.floor(lunarAge))
+    setCurrentPhase(phase)
   }, [])
 
   return (
@@ -23,6 +27,9 @@ export default function Home() {
             <div className={styles.moonDisplay}>
               <span className={styles.daysNumber}>{daysSinceNewMoon}</span>
               <span className={styles.daysLabel}>days since new moon</span>
+              <div className={styles.phaseInfo}>
+                <span className={styles.phaseLabel}>{currentPhase}</span>
+              </div>
             </div>
           </div>
         </div>

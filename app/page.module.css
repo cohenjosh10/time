@@ -23,6 +23,7 @@
   font-size: 3.5rem;
   font-weight: 300;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .content {
@@ -53,22 +54,127 @@
   text-transform: uppercase;
 }
 
-/* Responsive design */
+.phaseInfo {
+  margin-top: 2rem;
+}
+
+.phaseLabel {
+  font-size: 1.1rem;
+  color: #34495e;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Mobile-first responsive design */
 @media (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  .container {
+    padding: 0.5rem;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    /* Prevent zoom on double tap */
+    touch-action: manipulation;
   }
 
   .card {
-    padding: 2rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Prevent text selection on mobile */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .moonDisplay {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .daysNumber {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .daysLabel {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    line-height: 1.4;
+  }
+
+  .phaseInfo {
+    margin-top: 2rem;
+  }
+
+  .phaseLabel {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.25rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 12px;
+    min-height: 75vh;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
   }
 
   .daysNumber {
     font-size: 4rem;
+    margin-bottom: 0.8rem;
   }
 
   .daysLabel {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .card {
+    min-height: 85vh;
+    padding: 1rem 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .daysNumber {
+    font-size: 4.5rem;
+  }
+
+  .moonDisplay {
+    padding: 1rem 0;
   }
 }

@@ -3,111 +3,72 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   padding: 1rem;
 }
 
 .card {
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
   width: 100%;
   text-align: center;
 }
 
 .title {
   color: #333;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.nav {
-  margin: 2rem 0;
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.navButton {
-  background: #667eea;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.navButton:hover {
-  background: #5a6fd8;
-  transform: translateY(-2px);
-}
-
-.navButton.active {
-  background: #764ba2;
-  transform: translateY(-2px);
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
 .content {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  min-height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.pageContent {
-  animation: fadeIn 0.5s ease-in;
+.moonDisplay {
+  text-align: center;
 }
 
-.pageContent h2 {
-  color: #333;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+.daysNumber {
+  display: block;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
-.pageContent p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.daysLabel {
+  display: block;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
-  
+
   .card {
-    padding: 1.5rem;
+    padding: 2rem;
   }
-  
-  .navButton {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+
+  .daysNumber {
+    font-size: 4rem;
   }
-  
-  .pageContent h2 {
-    font-size: 1.5rem;
+
+  .daysLabel {
+    font-size: 1rem;
   }
 }

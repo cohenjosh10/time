@@ -8,16 +8,28 @@ export default function Home() {
   const [daysSinceNewMoon, setDaysSinceNewMoon] = useState<number>(0)
   const [currentPhase, setCurrentPhase] = useState<string>('')
   const [lunarAgePercent, setLunarAgePercent] = useState<number>(0)
+  const [currentDate, setCurrentDate] = useState<Date>()
+
 
   useEffect(() => {
     // Get days since last new moon using lunarphase-js
     const lunarAge = Moon.lunarAge() // Days since last new moon
     const phase = Moon.lunarPhase() // Get current phase name
     const agePercent = Moon.lunarAgePercent() // Percentage through lunar cycle
+    const date = new Date()
 
     setDaysSinceNewMoon(Math.floor(lunarAge))
     setCurrentPhase(phase)
     setLunarAgePercent(agePercent)
+    setCurrentDate(date)
+    
+    let id
+    const tick = () => {
+      setCurrentDate(new Date())
+      id = setTimeout(tick, 100)
+    }
+    tick()
+    return () => clearTimeout(id)
   }, [])
 
   // Calculate watch-style moon phase display
@@ -41,7 +53,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1 className={styles.title}>Moonphase</h1>
+        <span className={styles.daysNumber}>{currentDate?.toTimeString().split(' ')[0]}</span>
 
         <div className={styles.content}>
           <div className={styles.pageContent}>
